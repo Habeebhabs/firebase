@@ -1,1 +1,20 @@
-<p>child works!</p>
+<form [formGroup]="mainForm">
+    <input type="text" formControlName="mail" name="" id="" placeholder="Email"><br>
+    <input type="password" formControlName="password" name="" id="" placeholder="Password"><br>
+    <button type="submit" (click)="signUp()">Sign Up</button>
+    <button type="submit" (click)="signIn()">Sign In</button>
+</form>
+
+
+
+<button (click)="getData()">Get</button>
+
+<ul>
+    <li *ngFor="let item of data">
+        <span>{{item.email}}</span>
+        <button (click)="updateData(item.id)">Update</button>
+    </li>
+</ul>
+
+
+<app-global-loader [style.display]="isLoading ? 'block' : 'none'"></app-global-loader>
